@@ -1,0 +1,96 @@
+site_name: NoteBook
+
+repo_url: https://github.com/samomi0/samomi0.github.io
+repo_name: samomi0/samomi0.github.io
+
+theme:
+  name: material
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.indexes
+    - navigation.top # 返回顶部标签
+    - navigation.expand # 目录自动展开子目录
+    - toc.follow # 右侧toc随着页面滑动自动滑动
+    - navigation.top # 有回到页面最上方top的按键
+    - navigation.footer # 页面底部有下一页的链接(按目录上的顺序)
+    - navigation.tabs # 一级目录融合至顶栏，并且只展示二级目录
+    - navigation.tracking # 在翻到页面对应的标题处时，会将地址栏的地址更新成标题处的链接
+    - navigation.instant
+    - navigation.instant.progress # 页面顶部显示加载进度条
+    - content.code.copy # 代码块复制按键
+    - search.suggest # 搜索建议
+    - search.highlight # 搜索结果高亮/突出显示
+    - search.share # 搜索结果分享
+
+  palette:
+      # Light mode
+      - media: '(prefers-color-scheme: light)'
+        scheme: default
+        primary: indigo
+        accent: blue
+        toggle:
+          icon: material/weather-night
+          name: Switch to dark mode
+      # Dark mode
+      - media: '(prefers-color-scheme: dark)'
+        scheme: slate
+        primary: indigo
+        accent: amber
+        toggle:
+          icon: material/weather-sunny
+          name: Switch to light mode
+
+plugins:
+  - search:
+      separator: '[\u200b\u3000\-、。，．？！；\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+  - blog: # 设置blog
+      blog_dir: blog # 设置blog对应的路径
+      blog_toc: true # 设置blog索引页面的目录
+      post_readtime: false
+      post_date_format: full # 设置blog索引页面的日期格式
+      archive_toc: true
+      categories_toc: true
+      pagination_format: "$link_first $link_previous ~2~ $link_next $link_last" # 设置blog索引页面的分页格式
+      pagination_keep_content: true # 设置blog索引页面的分页内容
+      draft_if_future_date: true # 设置如果blog的日期是未来的话，就会被当成草稿不会被发布
+
+markdown_extensions:
+  - pymdownx.superfences: # mermaid画图
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - attr_list # 矩形按钮/按键
+  - def_list # a 无序/有序/任务 列表
+  - pymdownx.tasklist: # a
+      custom_checkbox: true
+  - pymdownx.critic # b Formatting 含 高亮/删除线/下划线/上下角标 [等]
+  - pymdownx.caret # b
+  - pymdownx.keys # b
+  - pymdownx.mark # b
+  - pymdownx.tilde # b
+  - toc: # 目录相关
+      permalink: true # 每个页面内，各标题会生成各自的链接
+      # title: 目录 # 修改页面右侧 Table of contents 文字
+  - footnotes # 脚注
+  - pymdownx.highlight: # c 代码块配置
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite # c
+  - pymdownx.snippets # c
+  - pymdownx.superfences # c
+  - admonition # d 标注
+  - pymdownx.details # d
+  - pymdownx.superfences # d
+  - pymdownx.emoji: # 使用emoji和icon
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences # e 内容选项卡
+  - pymdownx.tabbed: # e
+      alternate_style: true 
+  - md_in_html # 在 md 文档中能显示 html 的效果
+  - pymdownx.arithmatex: # f 显示 KaTeX 数学公式
+      generic: true # f
+

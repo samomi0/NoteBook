@@ -1,7 +1,7 @@
 site_name: NoteBook
 
-repo_url: https://github.com/samomi0/samomi0.github.io
-repo_name: samomi0/samomi0.github.io
+repo_url: https://github.com/samomi0/NoteBook
+repo_name: samomi0/NoteBook
 
 theme:
   name: material

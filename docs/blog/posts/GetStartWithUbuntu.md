@@ -1,7 +1,9 @@
 ---
 title: 从零开始的Ubuntu之旅
 authors: ["Misaki"]
-date: 2023-10-28
+date: 
+  created: 2023-10-28
+  updated: 2024-12-23
 categories: ["Ubuntu", "虚拟机"]
 ---
 
@@ -15,24 +17,23 @@ categories: ["Ubuntu", "虚拟机"]
 
 然后就可以根据提示来安装虚拟机了。
 
->安装系统时可能会遇到分辨率过低导致页面内容显示不完整的情况，可以用`xrandr`命令来切换分辨率。例如：`xrandr -s 7`，这里7表示第8个分辨率选项。
+!!! tip "安装系统时可能会遇到**分辨率过低**导致页面内容显示不完整的情况"
+    可以用`xrandr`命令来切换分辨率。例如：`xrandr -s 7`，这里7表示第8个分辨率选项。
 
 安装好虚拟机后进入操作系统，准备工作就完成了。
 
->① VirtualBox可能出现全屏时分辨率与屏幕不吻合的情况。
->
->1. 关闭虚拟机，在`控制器：IDE`处导入增强功能驱动
->2. 开启虚拟机，在屏幕底部（或顶部）的小工具栏选择`设备`->`安装增强功能`
->3. 可能需要重启
->
->② VirtualBox可能出现开启双向粘贴板/拖放但实际上失效的情况。
->
->1. 关闭虚拟机，在管理器选择`设置`->`存储`->`控制器：SATA`，勾选右侧的`使用主机输入输出(I/O)缓存`
->2. 选择`控制器：SATA`下方硬盘，勾选右侧的`固态驱动器`
->3. 在`控制器：IDE`处导入增强功能驱动
->4. 开启虚拟机，在文件系统打开驱动目录，运行可执行文件重新安装增强功能
->5. 可能需要重启
->6. *从虚拟机向宿主机拖放可能失败，暂无较好的解决办法*
+??? tip "① VirtualBox可能出现全屏时分辨率与屏幕不吻合的情况。"
+    1. 关闭虚拟机，在`控制器：IDE`处导入增强功能驱动
+    2. 开启虚拟机，在屏幕底部（或顶部）的小工具栏选择`设备`->`安装增强功能`
+    3. 可能需要重启
+
+??? tip "② VirtualBox可能出现开启双向粘贴板/拖放但实际上失效的情况。"
+    1. 关闭虚拟机，在管理器选择`设置`->`存储`->`控制器：SATA`，勾选右侧的`使用主机输入输出(I/O)缓存`
+    2. 选择`控制器：SATA`下方硬盘，勾选右侧的`固态驱动器`
+    3. 在`控制器：IDE`处导入增强功能驱动
+    4. 开启虚拟机，在文件系统打开驱动目录，运行可执行文件重新安装增强功能
+    5. 可能需要重启
+    6. *从虚拟机向宿主机拖放可能失败，暂无较好的解决办法*
 
 ## 从Docker开始
 
@@ -55,15 +56,16 @@ sudo docker pull ubuntu:latest
 
 ***注意页面上的提示**，ARM等版本需要使用[Ubuntu Ports 软件仓库](https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu-ports/)*
 
->这里建议把选项`是否使用 HTTPS`取消勾选，即选择否，避免证书可能带来的问题。更换对应ubuntu版本选项后，就可以复制粘贴了。这里示例ubuntu20.04的源。
->
->~~~
->deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse
->deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
->deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
->deb http://security.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
->~~~
->
+!!! note "更新时提示没有证书"
+    这里建议把选项`是否使用 HTTPS`取消勾选，即选择否，避免证书可能带来的问题。更换对应ubuntu版本选项后，就可以复制粘贴了。这里示例ubuntu20.04的源。
+
+    ~~~
+    deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse
+    deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+    deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+    deb http://security.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
+    ~~~
+
 
 使用`sudo vi /etc/apt/source.list`并把源写入，然后执行`sudo apt update`更新配置。
 
@@ -133,11 +135,13 @@ REMOTE=${REMOTE:-https://gitee.com/${REPO}.git}
 
 然后我们下载p10k主题和插件：
 
-~~~shell
+~~~sh
 git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
+~~~
+~~~sh
 git clone https://gitee.com/phpxxo/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
+~~~
+~~~sh
 git clone https://gitee.com/mirror-hub/zsh-syntax-highlighting $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 ~~~
 

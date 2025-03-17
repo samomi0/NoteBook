@@ -2,7 +2,7 @@
 title: 关于Docker镜像的一些事
 date: 2023-11-04
 authors: ["Misaki"]
-categories: ["部署", "Docker"]
+categories: ["Docker"]
 ---
 
 镜像、容器的分层与缓存

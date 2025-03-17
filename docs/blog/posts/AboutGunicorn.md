@@ -5,15 +5,15 @@ authors: ["Misaki"]
 categories: ["Gunicorn", "Python"]
 ---
 
-> *说真的，什么教程都不如直接看官方手册*
->
-> WSGI: [Gunicorn Docs](https://docs.gunicorn.org/en/stable) + [Flask Docs](https://flask.palletsprojects.com/en/3.0.x/)
-> 
-> ASGI: [Uvicorn Docs](https://www.uvicorn.org/) + [Fastapi Docs](https://fastapi.tiangolo.com/zh)
-
 ## 为什么选择它
 
 常见的python web应用框架有Fastapi或者Flask，与之对应的http服务器则是Uvicorn和Gunicorn。
+
+???+ abstract "不如先看看官方手册吧"
+
+    WSGI: [Gunicorn Docs](https://docs.gunicorn.org/en/stable) + [Flask Docs](https://flask.palletsprojects.com/en/3.0.x/)
+
+    ASGI: [Uvicorn Docs](https://www.uvicorn.org/) + [Fastapi Docs](https://fastapi.tiangolo.com/zh)
 
 <!-- more -->
 

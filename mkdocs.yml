@@ -8,20 +8,24 @@ theme:
   icon:
     repo: fontawesome/brands/github
   features:
-    - navigation.indexes
-    - navigation.top # 返回顶部标签
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy # 代码块复制按键
+    - content.tabs.link # Linked content tabs
+    - content.tooltips  # 帮助信息
     - navigation.expand # 目录自动展开子目录
-    - toc.follow # 右侧toc随着页面滑动自动滑动
-    - navigation.top # 有回到页面最上方top的按键
     - navigation.footer # 页面底部有下一页的链接(按目录上的顺序)
-    - navigation.tabs # 一级目录融合至顶栏，并且只展示二级目录
-    - navigation.tracking # 在翻到页面对应的标题处时，会将地址栏的地址更新成标题处的链接
+    - navigation.indexes
     - navigation.instant
     - navigation.instant.progress # 页面顶部显示加载进度条
-    - content.code.copy # 代码块复制按键
-    - search.suggest # 搜索建议
+    - navigation.tabs # 一级目录融合至顶栏，并且只展示二级目录
+    - navigation.top # 返回顶部标签
+    - navigation.tracking # 在翻到页面对应的标题处时，会将地址栏的地址更新成标题处的链接
     - search.highlight # 搜索结果高亮/突出显示
     - search.share # 搜索结果分享
+    - search.suggest # 搜索建议
+    - toc.follow # 右侧toc随着页面滑动自动滑动
 
   palette:
       # Light mode
@@ -40,6 +44,22 @@ theme:
         toggle:
           icon: material/weather-sunny
           name: Switch to light mode
+
+nav:
+  - HomePage: 
+    - Home: index.md
+    - Repo Links: RepoLinks.md
+    - About Me: About.md
+  - CodeSnippets: 
+    - CodeSnippets/CPUMemoryMonitor.md
+    - CodeSnippets/Converter.md
+    - CodeSnippets/FastapiCORS.md
+    - CodeSnippets/Logger.md
+    - CodeSnippets/PyMultiProcess.md
+    - CodeSnippets/ShareMemory.md
+    - CodeSnippets/TraversalFiles.md
+  - Blog: 
+    - blog/index.md
 
 plugins:
   - search:
@@ -89,7 +109,10 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.superfences # e 内容选项卡
   - pymdownx.tabbed: # e
-      alternate_style: true 
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - md_in_html # 在 md 文档中能显示 html 的效果
   - pymdownx.arithmatex: # f 显示 KaTeX 数学公式
       generic: true # f

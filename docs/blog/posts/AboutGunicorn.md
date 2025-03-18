@@ -11,9 +11,9 @@ categories: ["Gunicorn", "Python"]
 
 ???+ abstract "不如先看看官方手册吧"
 
-    WSGI: [Gunicorn Docs](https://docs.gunicorn.org/en/stable) + [Flask Docs](https://flask.palletsprojects.com/en/3.0.x/)
+    WSGI: [:octicons-link-16: Gunicorn Docs](https://docs.gunicorn.org/en/stable) + [:octicons-link-16: Flask Docs](https://flask.palletsprojects.com/en/3.0.x/)
 
-    ASGI: [Uvicorn Docs](https://www.uvicorn.org/) + [Fastapi Docs](https://fastapi.tiangolo.com/zh)
+    ASGI: [:octicons-link-16: Uvicorn Docs](https://www.uvicorn.org/) + [:octicons-link-16: Fastapi Docs](https://fastapi.tiangolo.com/zh)
 
 <!-- more -->
 

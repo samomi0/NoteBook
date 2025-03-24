@@ -47,9 +47,7 @@ theme:
 
 nav:
   - HomePage: 
-    - Home: index.md
-    - Repo Links: RepoLinks.md
-    - About Me: About.md
+    - About: index.md
   - CodeSnippets: 
     - CodeSnippets/CPUMemoryMonitor.md
     - CodeSnippets/Converter.md

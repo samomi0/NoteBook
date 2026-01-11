@@ -12,6 +12,12 @@
 
 <div class="grid cards" markdown>
 
+-   [:octicons-repo-16: __Monochrome__](https://github.com/samomi0/Monochrome)
+
+    ---
+
+    一个时间轴展示项目，兴趣使然。
+
 -   [:octicons-repo-16: __Erdtree__](https://github.com/samomi0/Erdtree)
 
     ---
